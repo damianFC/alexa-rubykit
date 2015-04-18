@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff7742a9-d1c0-470f-ab3f-fd1c9b88b494" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config.ru" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/alexa_rubyengine.rb" afterPath="$PROJECT_DIR$/bin/alexa_rubyengine.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alexa_rubykit.gemspec" afterPath="$PROJECT_DIR$/alexa_rubykit.gemspec" />
@@ -78,11 +79,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alexa_rubykit.gemspec" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alexa_rubykit.gemspec" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/alexa_rubykit.gemspec">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31990522" vertical-offset="0" max-vertical-offset="435">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
               <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.ru" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config.ru">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.035545025" vertical-offset="0" max-vertical-offset="422">
+              <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -145,6 +156,7 @@
         <option value="$PROJECT_DIR$/bin/alexa_rubyengine.rb" />
         <option value="$PROJECT_DIR$/lib/alexa_rubykit/request.rb" />
         <option value="$PROJECT_DIR$/alexa_rubykit.gemspec" />
+        <option value="$PROJECT_DIR$/config.ru" />
       </list>
     </option>
   </component>
@@ -692,8 +704,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/alexa_rubykit.gemspec">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31990522" vertical-offset="0" max-vertical-offset="435">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
           <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ru">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.035545025" vertical-offset="0" max-vertical-offset="422">
+          <caret line="1" column="24" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
