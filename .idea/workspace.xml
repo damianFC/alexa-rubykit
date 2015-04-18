@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/alexa_rubyengine.rb" afterPath="$PROJECT_DIR$/bin/alexa_rubyengine.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/alexa_rubykit.iml" afterPath="$PROJECT_DIR$/.idea/alexa_rubykit.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/helloworld.rb" afterPath="$PROJECT_DIR$/helloworld.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="alexa_rubykit.iws" />
@@ -22,6 +23,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/alexa_rubykit@alexa_rubykit__1_.coverage" NAME="alexa_rubykit (1) Coverage Results" MODIFIED="1429332861769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../alexa_rubyengine/lib" MODULE_NAME="alexa_rubyengine" />
     <SUITE FILE_PATH="coverage/alexa_rubykit@alexa_rubykit.coverage" NAME="alexa_rubykit Coverage Results" MODIFIED="1429222481210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" MODULE_NAME="alexa_rubykit" />
+    <SUITE FILE_PATH="coverage/alexa_rubykit@helloworld.coverage" NAME="helloworld Coverage Results" MODIFIED="1429338486540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="alexa_rubykit" />
     <SUITE FILE_PATH="coverage/alexa_rubykit@alexa_rubyengine__1_.coverage" NAME="alexa_rubyengine (1) Coverage Results" MODIFIED="1429335057128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" MODULE_NAME="alexa_rubykit" />
     <SUITE FILE_PATH="coverage/alexa_rubykit@alexa_rubyengine.coverage" NAME="alexa_rubyengine Coverage Results" MODIFIED="1429332889758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../alexa_rubyengine" MODULE_NAME="alexa_rubyengine" />
   </component>
@@ -77,21 +79,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.ru" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.ru" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ru">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="422">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
               <caret line="0" column="21" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="helloworld.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="helloworld.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/helloworld.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-              <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.67535543" vertical-offset="0" max-vertical-offset="422">
+              <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -337,7 +339,7 @@
       <recent name="$PROJECT_DIR$/../alexa_rubyengine/lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Ruby.alexa_rubyengine (1)">
+  <component name="RunManager" selected="Ruby.helloworld">
     <configuration default="false" name="alexa_rubyengine" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
       <module name="alexa_rubyengine" />
       <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -421,6 +423,28 @@
       </EXTENSION>
       <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/bin/alexa_rubyengine.rb" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="helloworld" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
+      <module name="alexa_rubykit" />
+      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/helloworld.rb" />
       <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
       <RunnerSettings RunnerId="RubyRunner" />
       <ConfigurationWrapper RunnerId="RubyRunner" />
@@ -512,18 +536,20 @@
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Ruby.alexa_rubyengine" />
       <item index="1" class="java.lang.String" itemvalue="Ruby.alexa_rubykit" />
       <item index="2" class="java.lang.String" itemvalue="Ruby.alexa_rubykit (1)" />
       <item index="3" class="java.lang.String" itemvalue="Ruby.alexa_rubyengine (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Ruby.helloworld" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Ruby.alexa_rubyengine (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Ruby.alexa_rubyengine" />
-        <item index="2" class="java.lang.String" itemvalue="Ruby.alexa_rubykit (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.alexa_rubykit" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Ruby.helloworld" />
+        <item index="1" class="java.lang.String" itemvalue="Ruby.alexa_rubyengine (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Ruby.alexa_rubyengine" />
+        <item index="3" class="java.lang.String" itemvalue="Ruby.alexa_rubykit (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Ruby.alexa_rubykit" />
       </list>
     </recent_temporary>
   </component>
@@ -565,7 +591,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3283582" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -576,7 +602,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29481733" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3283582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -710,18 +736,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helloworld.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.ru">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
           <caret line="0" column="21" selection-start-line="0" selection-start-column="11" selection-end-line="0" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helloworld.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67535543" vertical-offset="0" max-vertical-offset="422">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
           <folding />
         </state>
       </provider>
