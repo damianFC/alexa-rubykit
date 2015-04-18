@@ -1,6 +1,6 @@
 # AlexaRubykit
 
-TODO: Write a gem description
+This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa).
 
 ## Installation
 
@@ -20,7 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+For running the sample "say" application:
+* Configure your endpoint for SSL and load the certificate in the developer portal.
+* Execute alexa_rubyengine under the bin folder
+
 
 ## Contributing
 

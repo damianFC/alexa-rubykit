@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{Alexa Ruby Kit with examples}
   spec.homepage      = ""
   spec.license       = "MIT"
-  spec.files         = Dir['[A-Z]*'] + Dir['lib/**/*'] + Dir['tests/**']
+  spec.files         = Dir['[A-Z]*'] + Dir['lib/**/*'] + Dir['tests/**'] + Dir['bin/**']
   spec.files.reject!   { |fn| fn.include? ".gem" }
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})

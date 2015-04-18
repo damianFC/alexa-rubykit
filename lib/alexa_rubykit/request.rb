@@ -36,10 +36,12 @@ module AlexaRubykit
       response.to_json
     end
 
+    # Creates a outputspeech JSON object for responding with voice.
+    # Data type:
     #"outputSpeech": {
     #    "type": "string",
     #    "text": "string"
-    #},
+    #}
     def say_response(speech)
       output_speech = { :type => 'string', :text => speech }
       @response = { :outputSpeech => output_speech }
