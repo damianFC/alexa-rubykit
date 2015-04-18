@@ -1,5 +1,6 @@
-require "alexa_rubykit/version"
-
+require 'alexa_rubykit/request'
 module AlexaRubykit
-  # Your code goes here...
+  def self.print_json(json)
+    p json
+  end
 end
