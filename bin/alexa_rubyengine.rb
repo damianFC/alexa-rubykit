@@ -5,7 +5,6 @@ require 'sinatra'
 require 'json'
 require 'alexa_rubykit'
 
-
 enable :sessions
 post '/' do
   # Check that it's a valid Alexa request
