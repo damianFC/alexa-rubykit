@@ -1,0 +1,2 @@
+module Slot
+end
