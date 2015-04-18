@@ -1,6 +1,7 @@
 # AlexaRubykit
 
-This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa).
+This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa), the gem,
+and samples are provided as-is and are in current development.
 
 ## Installation
 
@@ -23,7 +24,8 @@ Or install it yourself as:
 For running the sample "say" application:
 * Configure your endpoint for SSL and load the certificate in the developer portal.
 * Execute alexa_rubyengine under the bin folder
-
+Sinatra will run in the background and serve a say command when it receives a LoginRequest command from
+the Alexa app.
 
 ## Contributing
 
