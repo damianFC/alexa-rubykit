@@ -13,6 +13,7 @@
 *.a
 mkmf.log
 .idea/
+vendor/
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
