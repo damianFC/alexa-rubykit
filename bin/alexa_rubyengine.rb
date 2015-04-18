@@ -3,7 +3,7 @@
 
 require 'sinatra'
 require 'json'
-require '../lib/alexa_rubykit'
+require 'alexa_rubykit'
 
 
 enable :sessions
