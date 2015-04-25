@@ -34,7 +34,6 @@ module AlexaRubykit
       response[:version] = @version
       response[:sessionAttributes] = @session_return
       response[:response] = @response
-      response[:shouldEndSession] = @shouldEndSession
       response.to_json
     end
 
@@ -46,7 +45,7 @@ module AlexaRubykit
     #}
     def say_response(speech)
       output_speech = { :type => 'string', :text => speech }
-      @response = { :outputSpeech => output_speech }
+      @response = { :outputSpeech => output_speech, :shouldEndSession => @shouldEndSession }
     end
 
     def add_session(session)
