@@ -11,6 +11,7 @@ post '/' do
   request_json = JSON.parse(request.body.read.to_s)
   halt 500 if request_json['session'].nil? || request_json['version'].nil? || request_json['request'].nil?
 
+  p request_json
   request = AlexaRubykit::Request.new(request_json['request'])
   request.version = '1.0'
   request.should_end_session = true
