@@ -6,7 +6,7 @@ module AlexaRubykit
   class Request
     require 'json'
     require 'sinatra'
-    attr_accessor :version, :session_attributes, :response, :should_end_session
+    attr_accessor :version, :session_attributes, :response, :shouldEndSession
 
     @request = ''
     @type = ''
@@ -29,11 +29,11 @@ module AlexaRubykit
     # Takes the version, response and should_end_session variables and builds a JSON object.
     def build_response
       # Need to set all 3 parameters or the response is invalid
-      halt 500 if @version.nil? || @response.nil? || @should_end_session.nil?
+      halt 500 if @version.nil? || @response.nil? || @shouldEndSession.nil?
       response = Hash.new
       response[:version] = @version
       response[:response] = @response
-      response[:shouldEndSession] = @should_end_session
+      response[:shouldEndSession] = @shouldEndSession
       response.to_json
     end
 

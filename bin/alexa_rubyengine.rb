@@ -13,7 +13,7 @@ post '/' do
 
  request = AlexaRubykit::Request.new(request_json['request'])
  request.version = '1.0'
- request.should_end_session = true
+ request.shouldEndSession = true
  request.say_response('Hello, this is a test')
  request.build_response
 end
