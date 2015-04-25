@@ -32,7 +32,7 @@ module AlexaRubykit
       halt 500 if @version.nil? || @response.nil? || @shouldEndSession.nil?
       response = Hash.new
       response[:version] = @version
-      response[:session] = @session_return
+      response[:sessionAttributes] = @session_return
       response[:response] = @response
       response[:shouldEndSession] = @shouldEndSession
       response.to_json
