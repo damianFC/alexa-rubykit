@@ -12,9 +12,9 @@ post '/' do
   halt 500 if request_json['session'].nil? || request_json['version'].nil? || request_json['request'].nil?
 
   p request_json
-  request = AlexaRubykit::Request.new(request_json['request'])
-  request.version = '1.0'
-  request.shouldEndSession = true
-  request.say_response('Hello, this is a test')
-  request.build_response
+  #request = AlexaRubykit::Request.new(request_json['request'])
+  #request.version = '1.0'
+  #request.shouldEndSession = true
+  #request.say_response('Hello, this is a test')
+  #request.build_response
 end
