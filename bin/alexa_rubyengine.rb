@@ -16,7 +16,7 @@ post '/' do
   p "2"
   request.version = '1.0'
   p "3"
-  request.shouldEndSession = true
-  request.say_response('Hello, this is a test')
-  request.build_response
+  #request.shouldEndSession = true
+  #request.say_response('Hello, this is a test')
+  #request.build_response
 end
