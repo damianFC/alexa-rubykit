@@ -33,7 +33,7 @@ module AlexaRubykit
       response = Hash.new
       response[:version] = @version
       response[:response] = @response
-      response[:should_end_session] = @should_end_session
+      response[:shouldEndSession] = @should_end_session
       response.to_json
     end
 
