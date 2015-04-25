@@ -44,7 +44,7 @@ module AlexaRubykit
     #    "text": "string"
     #}
     def say_response(speech)
-      output_speech = { :type => 'string', :text => speech }
+      output_speech = { :type => 'PlainText', :text => speech }
       @response = { :outputSpeech => output_speech, :shouldEndSession => @shouldEndSession }
     end
 
