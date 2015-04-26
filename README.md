@@ -42,8 +42,8 @@ Say to your alexa "alexa open ruby" and Alexa will query your endpoint, and the 
 
 There are two sources of troubleshooting information: the Amazon Echo app/website and the EBS logs that you can get from
 the management console.
-2. "Error in SSL handshake" : Make sure your used the FQDN when you generated the SSL and it's also the active SSL in EBS.
-1. "Error communicating with the application" : Query the EBS logs from the management console and create an issue on GitHub.
+- "Error in SSL handshake" : Make sure your used the FQDN when you generated the SSL and it's also the active SSL in EBS.
+- "Error communicating with the application" : Query the EBS logs from the management console and create an issue on GitHub.
 
 ## Contributing
 
