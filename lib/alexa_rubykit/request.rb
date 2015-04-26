@@ -49,7 +49,7 @@ module AlexaRubykit
     end
 
     def add_session(session)
-      @session_return = { :new => false, :sessionId => session}
+      @session_return = { :new => false, :sessionId => session }
     end
   end
 end
