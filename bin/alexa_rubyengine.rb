@@ -11,7 +11,6 @@ end
 
 #enable :sessions
 post '/' do
-  content_type 'application/json'
   # Check that it's a valid Alexa request
   request_json = JSON.parse(request.body.read.to_s)
   halt 500 if request_json['session'].nil? || request_json['version'].nil? || request_json['request'].nil?
