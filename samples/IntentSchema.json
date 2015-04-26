@@ -1,0 +1,13 @@
+{
+  "intents": [
+    {
+      "intent": "GetHelper",
+      "slots": [
+        {
+          "name": "helper",
+          "type": "LITERAL"
+        }
+      ]
+    }
+  ]
+}
