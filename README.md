@@ -7,7 +7,7 @@ and samples are provided as-is and are in current development.
 
 ### Sample Application
 
-For a sample application video tutorial, check the follow video bellow:
+For a sample application video tutorial, check
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=PwZf506UKHo" target="_blank"><img src="http://img.youtube.com/vi/PwZf506UKHo/0.jpg" 
 alt="Running a sample Rubykit Demo" width="240" height="180" border="5" /></a>
