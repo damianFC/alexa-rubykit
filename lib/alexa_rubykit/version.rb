@@ -1,3 +1,3 @@
 module AlexaRubykit
-  VERSION = '0.0.7-dev'
+  VERSION = '0.0.8'
 end
