@@ -6,14 +6,15 @@ module AlexaRubykit
   class Request
     require 'json'
     require 'sinatra'
-    attr_accessor :version, :session_return, :response, :shouldEndSession
+    require 'alexa_rubykit'
+    attr_accessor :version, :session_return, :response, :shouldEndSession, :type
 
     @request = ''
     @type = ''
     def initialize(json_request)
-      halt 500 if json_request.nil?
+      halt 500 unless AlexaRubykit.valid_alexa?(json_request)
       @request = json_request
-      case @request['type']
+      case @request['request']['type']
         when /Launch/
           @type = 'LAUNCH'
         when /Intent/
