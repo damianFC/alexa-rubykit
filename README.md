@@ -1,7 +1,6 @@
 # AlexaRubykit
 
-This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa), the gem,
-and samples are provided as-is and are in current development.
+This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa).
 
 ## Installation
 
@@ -11,6 +10,8 @@ For a sample application video tutorial, check the follow video bellow:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=PwZf506UKHo" target="_blank"><img src="http://img.youtube.com/vi/PwZf506UKHo/0.jpg" 
 alt="Running a sample Rubykit Demo" width="240" height="180" border="5" /></a>
+
+Samples are provided by the alexa_rubyengine project: https://github.com/damianFC/alexa_rubyengine
 
 ### For Ruby Projects:
 
@@ -56,11 +57,23 @@ the management console.
 
 ## Contributing
 
+1. Decide to work on the "dev" (unstable) branch or "master" (stable)
 1. Fork it ( https://github.com/[my-github-username]/alexa_rubykit/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+All development is done in the "dev" branch before being merged to master. Applications can use the developer
+environment by adding the following line to their Gemfile:
+
+```ruby
+gem 'alexa_rubykit', :git => 'https://github.com/damianFC/alexa-rubykit.git', :branch => 'dev'
+```
+
+To use the stable/master branch, rename 'dev' to 'master' or remove :branch all together.
+
+
 
 # <a name="team-members"></a>Team Members
 * "Damian Finol" <damian.finol@gmail.com>
