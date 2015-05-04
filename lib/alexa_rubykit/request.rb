@@ -25,32 +25,5 @@ module AlexaRubykit
           halt 500
       end
     end
-
-    # Builds a response.
-    # Takes the version, response and should_end_session variables and builds a JSON object.
-    def build_response
-      # Need to set all 3 parameters or the response is invalid
-      halt 500 if @version.nil? || @response.nil? || @shouldEndSession.nil?
-      response = Hash.new
-      response[:version] = @version
-      response[:sessionAttributes] = @session_return
-      response[:response] = @response
-      response.to_json
-    end
-
-    # Creates a outputspeech JSON object for responding with voice.
-    # Data type:
-    #"outputSpeech": {
-    #    "type": "string",
-    #    "text": "string"
-    #}
-    def say_response(speech)
-      output_speech = { :type => 'PlainText', :text => speech }
-      @response = { :outputSpeech => output_speech, :shouldEndSession => @shouldEndSession }
-    end
-
-    def add_session(session)
-      @session_return = { :new => false, :sessionId => session }
-    end
   end
 end
