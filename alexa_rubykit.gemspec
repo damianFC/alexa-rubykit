@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["damian.finol@gmail.com"]
   spec.summary       = %q{Alexa Ruby Kit}
   spec.description   = %q{Alexa Ruby Kit with examples}
-  spec.homepage      = ""
+  spec.homepage      = 'https://github.com/damianFC/alexa-rubykit'
   spec.license       = "MIT"
   spec.files         = Dir['[A-Z]*'] + Dir['lib/**/*'] + Dir['tests/**'] + Dir['bin/**']
   spec.files.reject!   { |fn| fn.include? ".gem" }
