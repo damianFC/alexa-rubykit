@@ -31,22 +31,22 @@ Or install it yourself as:
 
 ## Usage
 
-For running the sample "say" application:
-* Configure your endpoint for SSL for ElasticBeanStalk.
+This Gem provides methods to create and handle request and response objects to be used in your container of choice.
 
-1. Follow the instructions at http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Ruby_sinatra.html, this'll deploy the app to EBS.
-2. Then follow the instructions at http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html for installing and
-uploading a SSL certificate to EBS, use the domain of the endpoint selected in the previous step (Important!).
-3. In the ElasticBeanstalk management console, activate SSL port 443 and select the SSL certificate from the dropdown.
-4. Ensure that the endpoint is alive by going to https://endpointurl.elastickbeanstalk.com.
-Note: A 500 error is sent by default if a request is not made from an Alexa.
-5.  In your Developer Portal, create a new Alexa application and follow the instructions in the official SDK.
-Note: Use the certificate (server.crt) you created in the first step.
-6. As intent and sample utterances, use the contents of IntentSchema.json and SampleUtterances.baf
+Sample usage:
 
-That's it!
+```ruby
+require 'alexa_rubykit'
+response = AlexaRubykit::Response.new
+response.add_speech('Ruby is running ready!')
+response.build_response
+```
 
-Say to your alexa "alexa open ruby" and Alexa will query your endpoint, and the sample app will say back "Hello, Rubby is running ready"!
+Will generate a valid outputspeech response in JSON format:
+
+``` JSON
+$ {"version":"1.0","response":{"outputSpeech":{"type":"PlainText","text":"Ruby is running ready!"},"shouldEndSession":true}}
+```
 
 ## Troubleshooting
 
