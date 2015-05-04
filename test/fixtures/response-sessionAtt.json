@@ -1,0 +1,12 @@
+{
+  "version" : "1.0",
+  "sessionAttributes" :
+    {
+      "new" : false,
+      "sessionId" : "amzn-xxx-yyy-zzz"
+    },
+    "response" :
+    {
+      "shouldEndSession": true
+    }
+}
