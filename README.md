@@ -1,4 +1,5 @@
 # AlexaRubykit
+[![Gem Version](https://badge.fury.io/rb/alexa_rubykit.svg)](http://badge.fury.io/rb/alexa_rubykit)[![Build Status](https://travis-ci.org/damianFC/alexa-rubykit.svg?branch=master)](https://travis-ci.org/damianFC/alexa-rubykit)[![Build Status](https://travis-ci.org/damianFC/alexa-rubykit.svg?branch=dev)](https://travis-ci.org/damianFC/alexa-rubykit)[![Inline docs](http://inch-ci.org/github/damianFC/alexa-rubykit.svg?branch=master)](http://inch-ci.org/github/damianFC/alexa-rubykit)
 
 This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa).
 
