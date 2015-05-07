@@ -3,6 +3,8 @@ require 'alexa_rubykit/response'
 
 describe 'Builds appropriate response objects' do
 
+  #TODO: Do a :before with the Response object creation
+
   it 'should create valid session responses' do
     # Pair values.
     response = AlexaRubykit::Response.new
@@ -50,6 +52,22 @@ describe 'Builds appropriate response objects' do
     response_json = response.build_response
     sample_json = JSON.parse(File.read('fixtures/response-min.json')).to_json
     expect(response_json).to eq(sample_json)
+  end
+
+  it 'should create a valid card from a hash' do
+    response = AlexaRubykit::Response.new
+    response.add_hash_card( { :title => 'Ruby Run', :subtitle => 'Ruby Running Ready!' } )
+    response_json = response.build_response_object
+    sample_json = JSON.parse(File.read('fixtures/sample-card.json'))
+    expect(response_json.to_json).to eq(sample_json.to_json)
+  end
+
+  it 'should create an empty valid card with a response object.' do
+    response = AlexaRubykit::Response.new
+    response.add_card
+    response_json = response.build_response_object
+    sample_json = JSON.parse(File.read('fixtures/card-min.json'))
+    expect(response_json.to_json).to eq(sample_json.to_json)
   end
 
   it 'should create a valid response with some attributes' do

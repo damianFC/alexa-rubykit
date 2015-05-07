@@ -1,0 +1,8 @@
+{
+  "card" : {
+    "title" : "Ruby Run",
+    "subtitle" : "Ruby Running Ready!",
+    "type" : "Simple"
+  },
+  "shouldEndSession" : true
+}
