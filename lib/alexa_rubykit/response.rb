@@ -1,7 +1,7 @@
 module AlexaRubykit
   class Response
     require 'json'
-    attr_accessor :version, :session, :response_object, :session_attributes, :speech, :response
+    attr_accessor :version, :session, :response_object, :session_attributes, :speech, :response, :card
 
     # Every response needs a shouldendsession and a version attribute
     # We initialize version to 1.0, use add_version to set your own.
@@ -18,6 +18,27 @@ module AlexaRubykit
     def add_speech(speech_text)
       @speech = { :type => 'PlainText', :text => speech_text }
       @speech
+    end
+    #
+    #"type": "string",
+    #    "title": "string",
+    #    "subtitle": "string",
+    #    "content": "string"
+    def add_card(type = nil, title = nil , subtitle = nil, content = nil)
+      # A Card must have a type which the default is Simple.
+      @card = Hash.new()
+      @card[:type] = 'Simple' if type.nil?
+      @card[:title] = title unless title.nil?
+      @card[:subtitle] = subtitle unless subtitle.nil?
+      @card[:content] = content unless content.nil?
+      @card
+    end
+
+    # The JSON Spec says order shouldn't matter.
+    def add_hash_card(card)
+      card[:type] = 'Simple' if card[:type].nil?
+      @card = card
+      @card
     end
 
     # Adds a speech to the object, also returns a outputspeech object.
@@ -42,7 +63,7 @@ module AlexaRubykit
       @response = Hash.new
       @response[:outputSpeech] = @speech unless @speech.nil?
       # TODO: We need cards too
-      #response[:card] = @cards
+      @response[:card] = @card unless @card.nil?
       @response[:shouldEndSession] = session_end
       @response
     end
