@@ -5,25 +5,32 @@ module AlexaRubykit
 # - SessionEndedRequest: Session has ended.
   class Request
     require 'json'
-    require 'sinatra'
-    require 'alexa_rubykit'
     attr_accessor :version, :session_return, :response, :shouldEndSession, :type
+  end
 
-    @request = ''
-    @type = ''
-    def initialize(json_request)
-      halt 500 unless AlexaRubykit.valid_alexa?(json_request)
-      @request = json_request
-      case @request['request']['type']
-        when /Launch/
-          @type = 'LAUNCH'
-        when /Intent/
-          @type = 'INTENT'
-        when /SessionEnded/
-          @type = 'SESSIONENDED'
-        else
-          halt 500
-      end
+  def self.build_request(json_request)
+    raise ArgumentError, 'Invalid Alexa Request.' unless AlexaRubykit.valid_alexa?(json_request)
+    @request = nil
+    case json_request['request']['type']
+      when /Launch/
+        @request = LaunchRequest.new(json_request['request']['requestId'])
+      when /Intent/
+        @request = IntentRequest.new(json_request['request']['requestId'], json_request['request']['intent'])
+      when /SessionEnded/
+        'SESSION_ENDED'
+      else
+        raise ArgumentError, 'Invalid Request Type.'
+    end
+    @request
+  end
+
+  # Let's monkey patch Hash.
+  refine Hash do
+    # Take keys of hash and transform those to a symbols
+    def self.transform_keys_to_symbols(value)
+      return value if not value.is_a?(Hash)
+      hash = value.inject({}){|memo,(k,v)| memo[k.to_sym] = Hash.transform_keys_to_symbols(v); memo}
+      return hash
     end
   end
 end

@@ -1,6 +1,8 @@
 require 'alexa_rubykit/request'
 require 'alexa_rubykit/version'
 require 'alexa_rubykit/response'
+require 'alexa_rubykit/intent_request'
+require 'alexa_rubykit/launch_request'
 
 module AlexaRubykit
   def self.print_json(json)
