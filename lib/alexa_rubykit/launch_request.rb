@@ -10,7 +10,7 @@ module AlexaRubykit
       @request_id = request_id
     end
     def to_s
-      "LaunchRequest RequestID: #{@request_id}"
+      "LaunchRequest requestID: #{@request_id}"
     end
   end
 end
