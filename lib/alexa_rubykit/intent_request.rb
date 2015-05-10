@@ -36,12 +36,7 @@ module AlexaRubykit
     end
 
     def to_s
-      "IntentRequest: #{@name} \n"
-      "requestID: #{request_id}\n"
-      unless @slots.nil?
-        @slots.to_s
-      end
-      '\n'
+      "IntentRequest: #{@name} requestID: #{request_id}  Slots: #{@slots}"
     end
   end
 

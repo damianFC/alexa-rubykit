@@ -24,5 +24,6 @@ describe 'Request handling' do
     expect(intent_request.intent).not_to be_empty
     expect(intent_request.name).to eq('GetZodiacHoroscopeIntent')
     expect(intent_request.slots).not_to be_empty
+    puts intent_request.to_s
   end
 end
