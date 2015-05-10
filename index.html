@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Alexa Ruby Kit by damianFC</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Alexa Ruby Kit</h1>
+        <p>Amazon Echo Alexa&#39;s App Kit Ruby Implementation</p>
+        <p class="view"><a href="https://github.com/damianFC/alexa-rubykit">View the Project on GitHub <small>damianFC/alexa-rubykit</small></a></p>
+        <ul>
+          <li><a href="https://github.com/damianFC/alexa-rubykit/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/damianFC/alexa-rubykit/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/damianFC/alexa-rubykit">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="alexarubykit" class="anchor" href="#alexarubykit" aria-hidden="true"><span class="octicon octicon-link"></span></a>AlexaRubykit</h1>
+
+<p><a href="http://badge.fury.io/rb/alexa_rubykit"><img src="https://badge.fury.io/rb/alexa_rubykit.svg" alt="Gem Version"></a><a href="https://travis-ci.org/damianFC/alexa-rubykit"><img src="https://travis-ci.org/damianFC/alexa-rubykit.svg?branch=master" alt="Build Status"></a><a href="https://travis-ci.org/damianFC/alexa-rubykit"><img src="https://travis-ci.org/damianFC/alexa-rubykit.svg?branch=dev" alt="Build Status"></a><a href="http://inch-ci.org/github/damianFC/alexa-rubykit"><img src="http://inch-ci.org/github/damianFC/alexa-rubykit.svg?branch=master" alt="Inline docs"></a></p>
+
+<p>This gem implements a quick back-end service for deploying applications for Amazon's Echo (Alexa).</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="sample-application" class="anchor" href="#sample-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Application</h3>
+
+<p>For a sample application video tutorial, watch: </p>
+
+<p><a href="http://www.youtube.com/watch?feature=player_embedded&amp;v=PwZf506UKHo">http://www.youtube.com/watch?feature=player_embedded&amp;v=PwZf506UKHo</a></p>
+
+<p>Samples are provided by the alexa_rubyengine project: </p>
+
+<p><a href="https://github.com/damianFC/alexa_rubyengine">https://github.com/damianFC/alexa_rubyengine</a></p>
+
+<h3>
+<a id="for-ruby-projects" class="anchor" href="#for-ruby-projects" aria-hidden="true"><span class="octicon octicon-link"></span></a>For Ruby Projects:</h3>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>alexa_rubykit<span class="pl-pds">'</span></span></pre></div>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install alexa_rubykit
+</code></pre>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>This Gem provides methods to create and handle request and response objects to be used in your container of choice.</p>
+
+<p>Sample usage:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">require</span> <span class="pl-s"><span class="pl-pds">'</span>alexa_rubykit<span class="pl-pds">'</span></span>
+response <span class="pl-k">=</span> <span class="pl-c1">AlexaRubykit</span>::<span class="pl-c1">Response</span>.<span class="pl-k">new</span>
+response.add_speech(<span class="pl-s"><span class="pl-pds">'</span>Ruby is running ready!<span class="pl-pds">'</span></span>)
+response.build_response</pre></div>
+
+<p>Will generate a valid outputspeech response in JSON format:</p>
+
+<div class="highlight highlight-JSON"><pre>$ {<span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>1.0<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>response<span class="pl-pds">"</span></span>:{<span class="pl-s"><span class="pl-pds">"</span>outputSpeech<span class="pl-pds">"</span></span>:{<span class="pl-s"><span class="pl-pds">"</span>type<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>PlainText<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>text<span class="pl-pds">"</span></span>:<span class="pl-s"><span class="pl-pds">"</span>Ruby is running ready!<span class="pl-pds">"</span></span>},<span class="pl-s"><span class="pl-pds">"</span>shouldEndSession<span class="pl-pds">"</span></span>:<span class="pl-c1">true</span>}}</pre></div>
+
+<h2>
+<a id="troubleshooting" class="anchor" href="#troubleshooting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Troubleshooting</h2>
+
+<p>There are two sources of troubleshooting information: the Amazon Echo app/website and the EBS logs that you can get from
+the management console.</p>
+
+<ul>
+<li>"Error in SSL handshake" : Make sure your used the FQDN when you generated the SSL and it's also the active SSL in EBS.</li>
+<li>"Error communicating with the application" : Query the EBS logs from the management console and create an issue on GitHub.</li>
+</ul>
+
+<h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Decide to work on the "dev" (unstable) branch or "master" (stable)</li>
+<li>Fork it ( <a href="https://github.com/%5Bmy-github-username%5D/alexa_rubykit/fork">https://github.com/[my-github-username]/alexa_rubykit/fork</a> )</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+
+<p>All development is done in the "dev" branch before being merged to master. Applications can use the developer
+environment by adding the following line to their Gemfile:</p>
+
+<div class="highlight highlight-ruby"><pre><span class="pl-k">gem</span> <span class="pl-s"><span class="pl-pds">'</span>alexa_rubykit<span class="pl-pds">'</span></span>, <span class="pl-c1">:git</span> =&gt; <span class="pl-s"><span class="pl-pds">'</span>https://github.com/damianFC/alexa-rubykit.git<span class="pl-pds">'</span></span>, <span class="pl-c1">:branch</span> =&gt; <span class="pl-s"><span class="pl-pds">'</span>dev<span class="pl-pds">'</span></span></pre></div>
+
+<p>To use the stable/master branch, rename 'dev' to 'master' or remove :branch all together.</p>
+
+<h1>
+<a id="team-members" class="anchor" href="#team-members" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+<a name="team-members"></a>Team Members</h1>
+
+<ul>
+<li>"Damian Finol" <a href="mailto:damian.finol@gmail.com">damian.finol@gmail.com</a>
+</li>
+</ul>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/damianFC">damianFC</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
