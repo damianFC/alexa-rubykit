@@ -33,4 +33,13 @@ describe 'Request handling' do
     expect(intent_request.request_id).not_to be_empty
     expect(intent_request.reason).to eq('USER_INITIATED')
   end
+
+  it 'should create valid sessions with attributes' do
+    sample_request = JSON.parse(File.read('fixtures/sample-IntentRequest.json'))
+    intent_request = AlexaRubykit::build_request(sample_request)
+    expect(intent_request.session.new?).to be_falsey
+    expect(intent_request.session.has_attributes?).to be_truthy
+    expect(intent_request.session.user_defined?).to be_truthy
+    expect(intent_request.session.attributes).not_to be_empty
+  end
 end

@@ -1,6 +1,6 @@
 # Session end request class.
 module AlexaRubykit
-  class SessionEndedRequest
+  class SessionEndedRequest < Request
     attr_accessor :request_id, :reason, :type
 
     # TODO: Validate the reason.
