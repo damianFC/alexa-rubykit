@@ -24,6 +24,13 @@ describe 'Request handling' do
     expect(intent_request.intent).not_to be_empty
     expect(intent_request.name).to eq('GetZodiacHoroscopeIntent')
     expect(intent_request.slots).not_to be_empty
-    puts intent_request.to_s
+  end
+
+  it 'should create a valid session end request type' do
+    sample_request = JSON.parse(File.read('fixtures/sample-SessionEndedRequest.json'))
+    intent_request = AlexaRubykit::build_request(sample_request)
+    expect(intent_request.type).to eq('SESSION_ENDED_REQUEST')
+    expect(intent_request.request_id).not_to be_empty
+    expect(intent_request.reason).to eq('USER_INITIATED')
   end
 end

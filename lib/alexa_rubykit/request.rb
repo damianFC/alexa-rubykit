@@ -17,7 +17,7 @@ module AlexaRubykit
       when /Intent/
         @request = IntentRequest.new(json_request['request']['requestId'], json_request['request']['intent'])
       when /SessionEnded/
-        'SESSION_ENDED'
+        @request = SessionEndedRequest.new(json_request['request']['requestId'], json_request['request']['reason'])
       else
         raise ArgumentError, 'Invalid Request Type.'
     end

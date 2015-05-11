@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.abeee1a7-aee0-41e6-8192-e6faaed9f5ef",
+    "attributes": {
+      "supportedHoroscopePeriods": {
+        "daily": true,
+        "weekly": false,
+        "monthly": false
+      }
+    },
+    "user": {
+      "userId": "amzn1.account.AM3B227HF3FAM1B261HK7FFM3A2"
+    }
+  },
+  "request": {
+    "type": "SessionEndedRequest",
+    "requestId": "amzn1.echo-api.request.d8c37cd6-0e1c-458e-8877-5bb4160bf1e1",
+    "reason": "USER_INITIATED"
+  }
+}
