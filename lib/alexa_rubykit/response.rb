@@ -62,7 +62,6 @@ module AlexaRubykit
     def build_response_object(session_end = true)
       @response = Hash.new
       @response[:outputSpeech] = @speech unless @speech.nil?
-      # TODO: We need cards too
       @response[:card] = @card unless @card.nil?
       @response[:shouldEndSession] = session_end
       @response
