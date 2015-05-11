@@ -40,16 +40,18 @@ module AlexaRubykit
     end
   end
 
-
+  # Class that encapsulates each slot.
   class Slot
     attr_accessor :name, :value
 
+    # Each slot has a name and a value.
     def initialize(name, value)
       raise ArgumentError, 'Need a name and a value' if name.nil? || value.nil?
       @name = name
       @value = value
     end
 
+    # For better testing.
     def to_s
       "Slot Name: #{@name}, Value: #{value}"
     end
