@@ -5,12 +5,19 @@ module AlexaRubykit
 # - SessionEndedRequest: Session has ended.
   class Request
     require 'json'
-    attr_accessor :version, :session_return, :response, :shouldEndSession, :type
+    require 'alexa_rubykit/session'
+    attr_accessor :version, :response, :shouldEndSession, :type, :session
+
+    def add_session(session)
+      @session = session
+    end
   end
 
   def self.build_request(json_request)
     raise ArgumentError, 'Invalid Alexa Request.' unless AlexaRubykit.valid_alexa?(json_request)
     @request = nil
+    # TODO: We probably need better session handling.
+    session = AlexaRubykit::Session.new(json_request['session'])
     case json_request['request']['type']
       when /Launch/
         @request = LaunchRequest.new(json_request['request']['requestId'])
@@ -21,8 +28,10 @@ module AlexaRubykit
       else
         raise ArgumentError, 'Invalid Request Type.'
     end
+    @request.add_session(session)
     @request
   end
+
 
   # Let's monkey patch Hash.
   refine Hash do
