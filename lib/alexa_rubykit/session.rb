@@ -20,6 +20,10 @@ module AlexaRubykit
       !@user.nil? || !@user['userId'].nil?
     end
 
+    def user_id
+      @user['userId'] if user_defined?
+    end
+
     # Check to see if attributes are present.
     def has_attributes?
       !@attributes.empty?
