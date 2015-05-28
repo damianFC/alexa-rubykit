@@ -69,8 +69,8 @@ module AlexaRubykit
 
     # Builds a response.
     # Takes the version, response and should_end_session variables and builds a JSON object.
-    def build_response
-      response_object = build_response_object
+    def build_response(session_end = true)
+      response_object = build_response_object(session_end)
       response = Hash.new
       response[:version] = @version
       response[:sessionAttributes] = @session_attributes unless @session_attributes.empty?
