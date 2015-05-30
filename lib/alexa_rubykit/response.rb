@@ -53,6 +53,7 @@ module AlexaRubykit
       { :outputSpeech => output_speech, :shouldEndSession => end_session }
     end
 
+    # Incorporates reprompt in the SDK 2015-05
     def say_response_with_reprompt(speech, reprompt_speech, end_session = true)
       output_speech = add_speech(speech)
       reprompt_speech = add_reprompt(reprompt_speech)
@@ -91,7 +92,7 @@ module AlexaRubykit
       response.to_json
     end
 
-    # TODO: Update this.
+    # Outputs the version, session object and the response object.
     def to_s
       "Version => #{@version}, SessionObj => #{@session}, Response => #{@response}"
     end

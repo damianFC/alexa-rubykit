@@ -35,6 +35,7 @@ module AlexaRubykit
       slot
     end
 
+    # Outputs the Intent Name, request Id and slot information.
     def to_s
       "IntentRequest: #{@name} requestID: #{request_id}  Slots: #{@slots}"
     end
@@ -51,7 +52,7 @@ module AlexaRubykit
       @value = value
     end
 
-    # For better testing.
+    # Outputs Slot name and value.
     def to_s
       "Slot Name: #{@name}, Value: #{value}"
     end

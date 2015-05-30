@@ -12,6 +12,8 @@ module AlexaRubykit
       @request_id = request_id
       @reason = reason
     end
+
+    # Ouputs the request_id and the reason why.
     def to_s
       "Session Ended for requestID: #{@request_id} with reason #{@reason}"
     end

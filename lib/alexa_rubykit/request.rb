@@ -8,11 +8,13 @@ module AlexaRubykit
     require 'alexa_rubykit/session'
     attr_accessor :version, :response, :shouldEndSession, :type, :session
 
+    # Adds a specific session.
     def add_session(session)
       @session = session
     end
   end
 
+  # Builds a new request for Alexa.
   def self.build_request(json_request)
     raise ArgumentError, 'Invalid Alexa Request.' unless AlexaRubykit.valid_alexa?(json_request)
     @request = nil
@@ -31,7 +33,6 @@ module AlexaRubykit
     @request.add_session(session)
     @request
   end
-
 
   # Let's monkey patch Hash.
   refine Hash do

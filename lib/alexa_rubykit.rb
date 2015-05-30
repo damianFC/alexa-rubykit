@@ -6,10 +6,12 @@ require 'alexa_rubykit/launch_request'
 require 'alexa_rubykit/session_ended_request'
 
 module AlexaRubykit
+  # Prints a JSON object.
   def self.print_json(json)
     p json
   end
 
+  # Prints the Gem version.
   def self.print_version
     p AlexaRubykit::VERSION
   end

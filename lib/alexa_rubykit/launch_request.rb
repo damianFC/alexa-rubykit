@@ -9,6 +9,8 @@ module AlexaRubykit
       @type = 'LAUNCH_REQUEST'
       @request_id = request_id
     end
+
+    # Outputs the launch requestID.
     def to_s
       "LaunchRequest requestID: #{@request_id}"
     end

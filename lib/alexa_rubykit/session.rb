@@ -20,6 +20,7 @@ module AlexaRubykit
       !@user.nil? || !@user['userId'].nil?
     end
 
+    # Returns the user_id.
     def user_id
       @user['userId'] if user_defined?
     end
