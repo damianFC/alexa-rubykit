@@ -1,7 +1,7 @@
 module AlexaRubykit
   class Response
     require 'json'
-    attr_accessor :version, :session, :response_object, :session_attributes, :speech, :response, :card
+    attr_accessor :version, :session, :response_object, :session_attributes, :speech, :reprompt, :response, :card
 
     # Every response needs a shouldendsession and a version attribute
     # We initialize version to 1.0, use add_version to set your own.
@@ -19,6 +19,12 @@ module AlexaRubykit
       @speech = { :type => 'PlainText', :text => speech_text }
       @speech
     end
+
+    def add_reprompt(speech_text)
+      @reprompt = { "outputSpeech" => { :type => 'PlainText', :text => speech_text } }
+      @reprompt
+    end
+
     #
     #"type": "string",
     #    "title": "string",
@@ -47,6 +53,12 @@ module AlexaRubykit
       { :outputSpeech => output_speech, :shouldEndSession => end_session }
     end
 
+    def say_response_with_reprompt(speech, reprompt_speech, end_session = true)
+      output_speech = add_speech(speech)
+      reprompt_speech = add_reprompt(reprompt_speech)
+      { :outputSpeech => output_speech, :reprompt => reprompt_speech, :shouldEndSession => end_session }
+    end
+
 
     # Creates a session object. We pretty much only use this in testing.
     def build_session
@@ -63,6 +75,7 @@ module AlexaRubykit
       @response = Hash.new
       @response[:outputSpeech] = @speech unless @speech.nil?
       @response[:card] = @card unless @card.nil?
+      @response[:reprompt] = @reprompt unless session_end && @reprompt.nil?
       @response[:shouldEndSession] = session_end
       @response
     end
