@@ -78,3 +78,4 @@ To use the stable/master branch, rename 'dev' to 'master' or remove :branch all 
 
 # <a name="team-members"></a>Team Members
 * "Damian Finol" <damian.finol@gmail.com>
+* "Dave Shapiro" <dss.shapiro@gmail.com>
