@@ -42,4 +42,10 @@ describe 'Request handling' do
     expect(intent_request.session.user_defined?).to be_truthy
     expect(intent_request.session.attributes).not_to be_empty
   end
+  
+  it 'transform_keys_to_symbols' do
+    string_keys_hash = { "test1" => 'value', "test2" => { "test3" => 'value' } }
+    symbol_keys_hash = { test1: 'value', test2: { test3: 'value' } }
+    expect(AlexaRubykit.transform_keys_to_symbols(string_keys_hash)).to eq(symbol_keys_hash)
+  end
 end
