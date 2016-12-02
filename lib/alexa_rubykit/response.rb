@@ -33,7 +33,7 @@ module AlexaRubykit
     def add_card(type = nil, title = nil , subtitle = nil, content = nil)
       # A Card must have a type which the default is Simple.
       @card = Hash.new()
-      @card[:type] = 'Simple' if type.nil?
+      @card[:type] = type || 'Simple'
       @card[:title] = title unless title.nil?
       @card[:subtitle] = subtitle unless subtitle.nil?
       @card[:content] = content unless content.nil?

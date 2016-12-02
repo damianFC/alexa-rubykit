@@ -1,16 +1,16 @@
 module AlexaRubykit
   class IntentRequest < Request
-    attr_accessor :request_id, :intent, :name, :slots
+    attr_accessor :intent, :name, :slots
 
     # We still don't know if all of the parameters in the request are required.
     # Checking for the presence of intent on an IntentRequest.
-    def initialize(request_id, intent)
-      raise ArgumentError, 'Intent should exist on an IntentRequest' if intent.nil?
+    def initialize(json_request)
+      super
+      @intent = json_request['request']['intent']
+      raise ArgumentError, 'Intent should exist on an IntentRequest' if @intent.nil?
       @type = 'INTENT_REQUEST'
-      @request_id = request_id
-      @intent = intent
-      @name = intent['name']
-      @slots = intent['slots']
+      @name  = @intent['name']
+      @slots = @intent['slots']
     end
 
     # Takes a Hash object.
@@ -37,7 +37,7 @@ module AlexaRubykit
 
     # Outputs the Intent Name, request Id and slot information.
     def to_s
-      "IntentRequest: #{@name} requestID: #{request_id}  Slots: #{@slots}"
+      "IntentRequest: #{name} requestID: #{request_id}  Slots: #{slots}"
     end
   end
 
@@ -54,7 +54,7 @@ module AlexaRubykit
 
     # Outputs Slot name and value.
     def to_s
-      "Slot Name: #{@name}, Value: #{value}"
+      "Slot Name: #{name}, Value: #{value}"
     end
   end
 end

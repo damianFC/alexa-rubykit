@@ -12,7 +12,7 @@ module AlexaRubykit
 
     # Returns whether this is a new session or not.
     def new?
-      @new
+      !!@new
     end
 
     # Returns true if a user is defined.
@@ -22,7 +22,11 @@ module AlexaRubykit
 
     # Returns the user_id.
     def user_id
-      @user['userId'] if user_defined?
+      @user['userId'] if @user
+    end
+
+    def access_token
+      @user['accessToken'] if @user
     end
 
     # Check to see if attributes are present.
