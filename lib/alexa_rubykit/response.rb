@@ -24,7 +24,7 @@ module AlexaRubykit
     def add_audio_url(url, token='', offset=0)
       @directives << {
         'type' => 'AudioPlayer.Play',
-        'playBehavior' => 'ENQUEUE',
+        'playBehavior' => 'REPLACE_ALL',
         'audioItem' => {
           'stream' => {
             'token' => token,
