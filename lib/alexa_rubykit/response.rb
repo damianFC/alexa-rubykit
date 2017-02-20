@@ -8,6 +8,7 @@ module AlexaRubykit
     def initialize(version = '1.0')
       @session_attributes = Hash.new
       @version = version
+      @directives = []
     end
 
     # Adds a key,value pair to the session object.
@@ -18,6 +19,20 @@ module AlexaRubykit
     def add_speech(speech_text)
       @speech = { :type => 'PlainText', :text => speech_text }
       @speech
+    end
+    
+    def add_audio_url(url, token='', offset=0)
+      @directives << {
+        'type' => 'AudioPlayer.Play',
+        'playBehavior' => 'ENQUEUE',
+        'audioItem' => {
+          'stream' => {
+            'token' => token,
+            'url' => url,
+            'offsetInMilliseconds' => offset
+          }
+        }
+      }
     end
 
     def add_reprompt(speech_text)
@@ -75,6 +90,7 @@ module AlexaRubykit
     def build_response_object(session_end = true)
       @response = Hash.new
       @response[:outputSpeech] = @speech unless @speech.nil?
+      @response[:directives] = @directives unless @directives.empty?
       @response[:card] = @card unless @card.nil?
       @response[:reprompt] = @reprompt unless session_end && @reprompt.nil?
       @response[:shouldEndSession] = session_end
