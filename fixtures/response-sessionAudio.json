@@ -1,0 +1,20 @@
+{
+  "version" : "1.0",
+  "response" :
+  {
+    "directives": [
+      {
+        "type": "AudioPlayer.Play",
+        "playBehavior": "REPLACE_ALL",
+        "audioItem": {
+          "stream": {
+            "token": "token",
+            "url": "http://test/url.mp3",
+            "offsetInMilliseconds": 100
+          }
+        }
+      }
+    ],
+    "shouldEndSession": true
+  }
+}
