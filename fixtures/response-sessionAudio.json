@@ -5,7 +5,7 @@
     "directives": [
       {
         "type": "AudioPlayer.Play",
-        "playBehavior": "ENQUEUE",
+        "playBehavior": "REPLACE_ALL",
         "audioItem": {
           "stream": {
             "token": "token",
