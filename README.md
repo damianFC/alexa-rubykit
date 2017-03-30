@@ -45,8 +45,17 @@ response.build_response
 
 Will generate a valid outputspeech response in JSON format:
 
-``` JSON
-$ {"version":"1.0","response":{"outputSpeech":{"type":"PlainText","text":"Ruby is running ready!"},"shouldEndSession":true}}
+```JSON
+{
+    "version": "1.0",
+    "response": {
+        "outputSpeech": {
+            "type": "PlainText",
+            "text": "Ruby is running ready!"
+        },
+        "shouldEndSession": true
+    }
+}
 ```
 
 ## Troubleshooting
