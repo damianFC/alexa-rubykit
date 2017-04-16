@@ -19,9 +19,9 @@ describe 'Request handling' do
 
   it 'should raise an exception when an invalid request is sent' do
     sample_request = 'invalid object!'
-    expect { AlexaRubykit::build_request(sample_request)}.to raise_exception
+    expect { AlexaRubykit::build_request(sample_request)}.to raise_error(ArgumentError)
     sample_request = nil
-    expect { AlexaRubykit::build_request(sample_request)}.to raise_exception
+    expect { AlexaRubykit::build_request(sample_request)}.to raise_error(ArgumentError)
   end
 
   it 'should create valid intent request type' do
