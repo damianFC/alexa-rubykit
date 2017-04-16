@@ -9,6 +9,14 @@ describe 'Request handling' do
     expect(request.type).to eq('LAUNCH_REQUEST')
   end
 
+  it 'should correctly identify valid AWS requests' do
+    sample_bad_request = { foo: 'bar' }
+    expect(AlexaRubykit::valid_alexa?(sample_bad_request)).to be false
+
+    sample_good_request = JSON.parse(File.read('fixtures/sample-IntentRequest.json'))
+    expect(AlexaRubykit::valid_alexa?(sample_good_request)).to be true
+  end
+
   it 'should raise an exception when an invalid request is sent' do
     sample_request = 'invalid object!'
     expect { AlexaRubykit::build_request(sample_request)}.to raise_exception
