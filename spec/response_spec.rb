@@ -75,6 +75,7 @@ describe 'Builds appropriate response objects' do
     expect(response_object[:outputSpeech][:type]).to include('SSML')
     expect(response_object[:outputSpeech][:ssml]).to include('<speak>')
     expect(response_object[:outputSpeech][:ssml]).to include('</speak>')
+    expect(response_object[:outputSpeech][:ssml]).to include('<speak>Testing SSML Alexa Rubykit support!</speak>')
   end
 
   it 'should create a valid minimum response (body)' do
