@@ -20,3 +20,4 @@ mkmf.log
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
 .DS_
+sync-upstream.sh
