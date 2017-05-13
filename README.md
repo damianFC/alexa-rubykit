@@ -65,6 +65,14 @@ the management console.
 - "Error in SSL handshake" : Make sure your used the FQDN when you generated the SSL and it's also the active SSL in EBS.
 - "Error communicating with the application" : Query the EBS logs from the management console and create an issue on GitHub.
 
+## Testing
+
+Run the tests using
+
+```bash
+bundle exec rake
+```
+
 ## Contributing
 
 1. Decide to work on the "dev" (unstable) branch or "master" (stable)
