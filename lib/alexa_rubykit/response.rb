@@ -16,8 +16,12 @@ module AlexaRubykit
       @session_attributes[key.to_sym] = value
     end
 
-    def add_speech(speech_text)
-      @speech = { :type => 'PlainText', :text => speech_text }
+    def add_speech(speech_text, ssml = false)
+      if ssml
+        @speech = { :type => 'SSML', :ssml => check_ssml(speech_text) }
+      else
+        @speech = { :type => 'PlainText', :text => speech_text }
+      end
       @speech
     end
     
@@ -35,8 +39,12 @@ module AlexaRubykit
       }
     end
 
-    def add_reprompt(speech_text)
-      @reprompt = { "outputSpeech" => { :type => 'PlainText', :text => speech_text } }
+    def add_reprompt(speech_text, ssml = false)
+      if ssml
+        @reprompt = { "outputSpeech" => { :type => 'SSML', :ssml => check_ssml(speech_text) } }
+      else
+        @reprompt = { "outputSpeech" => { :type => 'PlainText', :text => speech_text } }
+      end
       @reprompt
     end
 
@@ -63,15 +71,15 @@ module AlexaRubykit
     end
 
     # Adds a speech to the object, also returns a outputspeech object.
-    def say_response(speech, end_session = true)
-      output_speech = add_speech(speech)
+    def say_response(speech, end_session = true, ssml = false)
+      output_speech = add_speech(speech,ssml)
       { :outputSpeech => output_speech, :shouldEndSession => end_session }
     end
 
     # Incorporates reprompt in the SDK 2015-05
-    def say_response_with_reprompt(speech, reprompt_speech, end_session = true)
-      output_speech = add_speech(speech)
-      reprompt_speech = add_reprompt(reprompt_speech)
+    def say_response_with_reprompt(speech, reprompt_speech, end_session = true, speech_ssml = false, reprompt_ssml = false)
+      output_speech = add_speech(speech,speech_ssml)
+      reprompt_speech = add_reprompt(reprompt_speech,reprompt_ssml)
       { :outputSpeech => output_speech, :reprompt => reprompt_speech, :shouldEndSession => end_session }
     end
 
@@ -112,5 +120,12 @@ module AlexaRubykit
     def to_s
       "Version => #{@version}, SessionObj => #{@session}, Response => #{@response}"
     end
+
+    private
+
+      def check_ssml(ssml_string)
+        ssml_string = ssml_string.strip[0..6] == "<speak>" ? ssml_string : "<speak>" + ssml_string
+        ssml_string.strip[-8..1] == "</speak>" ? ssml_string : ssml_string + "</speak>"
+      end
   end
 end
