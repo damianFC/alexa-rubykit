@@ -123,4 +123,12 @@ describe 'Builds appropriate response objects' do
     expect(response_json).to eq(sample_json)
   end
 
+  it 'should create a valid response when delegating the dialog to Alexa' do
+    response = AlexaRubykit::Response.new
+    response.delegate_dialog_response
+    response_object = response.build_response_object
+    expect(response_object).to include(:directives)
+    expect(response_object[:directives]).to include({'type' => 'Dialog.Delegate'})
+  end
+
 end

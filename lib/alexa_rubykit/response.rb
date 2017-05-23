@@ -39,6 +39,12 @@ module AlexaRubykit
       }
     end
 
+    def delegate_dialog_response
+      @directives << {
+        'type'=> 'Dialog.Delegate'
+      }
+    end
+
     def add_reprompt(speech_text, ssml = false)
       if ssml
         @reprompt = { "outputSpeech" => { :type => 'SSML', :ssml => check_ssml(speech_text) } }
@@ -82,7 +88,6 @@ module AlexaRubykit
       reprompt_speech = add_reprompt(reprompt_speech,reprompt_ssml)
       { :outputSpeech => output_speech, :reprompt => reprompt_speech, :shouldEndSession => end_session }
     end
-
 
     # Creates a session object. We pretty much only use this in testing.
     def build_session
