@@ -10,11 +10,11 @@ module AlexaRubykit
 
     # Every response needs a shouldendsession and a version attribute
     # We initialize version to 1.0, use add_version to set your own.
-    def initialize(version = '1.0', request)
+    def initialize(request=nil, version='1.0')
       @session_attributes = Hash.new
       @version = version
       @request = request
-      @intents = request.intent if request.type == "INTENT_REQUEST"
+      @intents = request.intent if request && request.type == "INTENT_REQUEST"
       @directives = []
     end
 
