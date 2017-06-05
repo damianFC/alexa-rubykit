@@ -1,13 +1,20 @@
 module AlexaRubykit
   class Response
+    class SlotNotFound < StandardError; end
+
     require 'json'
-    attr_accessor :version, :session, :response_object, :session_attributes, :speech, :reprompt, :response, :card
+    require 'alexa_rubykit/response/dialog'
+
+    attr_accessor :version, :session, :response_object, :session_attributes,
+                  :speech, :reprompt, :response, :card, :intents, :request
 
     # Every response needs a shouldendsession and a version attribute
     # We initialize version to 1.0, use add_version to set your own.
-    def initialize(version = '1.0')
+    def initialize(version = '1.0', request)
       @session_attributes = Hash.new
       @version = version
+      @request = request
+      @intents = request.intent if request.type == "INTENT_REQUEST"
       @directives = []
     end
 
@@ -40,9 +47,26 @@ module AlexaRubykit
     end
 
     def delegate_dialog_response
-      @directives << {
-        'type'=> 'Dialog.Delegate'
-      }
+      @directives = [Dialog.delegate_directive(intents)]
+    end
+
+    def elicit_dialog_response(slot)
+      @directives = [Dialog.elicit_slot_directive(slot, intents)]
+    end
+
+    def confirm_dialog_slot(slot)
+      @directives = [Dialog.confirm_slot_directive(slot, intents)]
+    end
+
+    def confirm_dialog_intent
+      @directives = [Dialog.confirm_intent_directive(intents)]
+    end
+
+    def modify_slot(name, value, confirmation_status)
+      raise SlotNotFound if @intents['slots'][name].nil?
+
+      @intents['slots'][name]['value'] = value
+      @intents['slots'][name]['confirmationStatus'] = confirmation_status
     end
 
     def add_reprompt(speech_text, ssml = false)
